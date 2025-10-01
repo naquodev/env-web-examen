@@ -1,1 +1,35 @@
 @import "tailwindcss";
+
+body {
+  @apply text-white;
+  background: radial-gradient(circle at 20% 20%, #1a1a40, #0d0d20, #050510);
+  background-size: 300% 300%;
+  animation: galaxy 20s ease infinite;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Animation fluide galaxie */
+@keyframes galaxy {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Petites étoiles en overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: transparent
+    url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
+}
