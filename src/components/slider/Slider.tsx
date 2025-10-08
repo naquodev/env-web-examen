@@ -1,1 +1,1 @@
-﻿export { default } from "@/pages/Slider";\n
+export { default } from "@/pages/Slider";
