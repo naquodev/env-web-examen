@@ -8,27 +8,27 @@ type UrlVisualProps = {
 function UrlStructureVisual({ stage }: UrlVisualProps) {
   const segments = [
     {
-      key: "Schema et autorite",
-      label: "Schema + Autorite",
+      key: "Schéma et autorité",
+      label: "Schéma + Autorité",
       sample: "https://api.exemple.fr",
-      description: "Protocole, sous-domaine, domaine et TLD determinent la cible",
+      description: "Protocole, sous-domaine, domaine et TLD déterminent la cible",
     },
     {
       key: "Chemin et ressources",
       label: "Chemin",
       sample: "/produits/123",
-      description: "Segments REST lisibles et hierarchie fonctionnelle",
+      description: "Segments REST lisibles et hiérarchie fonctionnelle",
     },
     {
-      key: "Parametres et fragments",
-      label: "Parametres",
+      key: "Paramètres et fragments",
+      label: "Paramètres",
       sample: "?q=filtre&lang=fr#section-2",
-      description: "Query cote serveur, fragment cote client ou SPA",
+      description: "Query côté serveur, fragment côté client ou SPA",
     },
     {
       key: "Statuts et redirections",
       label: "Statuts",
-      sample: "301 -> 308",
+      sample: "301 → 308",
       description: "Redirections permanentes ou temporaires, gestion SEO",
     },
   ];
@@ -64,22 +64,22 @@ function UrlStructureVisual({ stage }: UrlVisualProps) {
 
 const highlights = [
   {
-    title: "Schema et autorite",
-    text: "https:// indique le protocole securise et l'hote precise la zone exposee.",
+    title: "Schéma et autorité",
+    text: "https:// indique le protocole sécurisé et l'hôte précise la zone exposée.",
     details:
-      "Le schema RFC 3986 suit la forme schema://user:pass@host:port. https force TLS et le port 443 par defaut. L'autorite regroupe sous-domaine, domaine et extension (TLD).",
-    impact: "Valider certificat et host evite les alertes navigateur et protege les donnees.",
+      "Le schéma RFC 3986 suit la forme schéma://utilisateur:motdepasse@hôte:port. https force TLS et le port 443 par défaut. L'autorité regroupe sous-domaine, domaine et extension (TLD).",
+    impact: "Valider certificat et hôte évite les alertes navigateur et protège les données.",
     sources: [
       { label: "RFC 3986", url: "https://www.rfc-editor.org/rfc/rfc3986" },
       { label: "MDN - URL overview", url: "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL" },
     ],
-    visual: <UrlStructureVisual stage="Schema et autorite" />,
+    visual: <UrlStructureVisual stage="Schéma et autorité" />,
   },
   {
     title: "Chemin et ressources",
-    text: "Les segments /produits/123 designent la ressource cible.",
+    text: "Les segments /produits/123 désignent la ressource cible.",
     details:
-      "Le chemin doit etre coherent avec la hierarchie fonctionnelle. Utiliser des slugs comprehensibles, reserver la casse et ajouter des extensions lorsque necessaire (.json, .pdf).",
+      "Le chemin doit être cohérent avec la hiérarchie fonctionnelle. Utiliser des slugs compréhensibles, respecter la casse et ajouter des extensions lorsqu'elles ont du sens (.json, .pdf).",
     impact: "Un routing clair facilite SEO, mise en cache CDN et support client.",
     sources: [
       { label: "RFC 3986 - Path", url: "https://www.rfc-editor.org/rfc/rfc3986#section-3.3" },
@@ -88,22 +88,22 @@ const highlights = [
     visual: <UrlStructureVisual stage="Chemin et ressources" />,
   },
   {
-    title: "Parametres et fragments",
-    text: "?utm_source=campagne transporte les filtres. #section handle client.",
+    title: "Paramètres et fragments",
+    text: "?utm_source=campagne transporte des filtres. #section reste côté client.",
     details:
-      "Les query strings transmettent tri, pagination ou tracking (utm_*). Encoder les caracteres reserves, filtrer cote serveur et eviter d'y laisser des secrets. Le fragment (#id) n'est jamais envoye au serveur.",
-    impact: "Limiter les parametres reduit le duplicate content et les injections.",
+      "Les query strings transmettent tri, pagination ou tracking (utm_*). Encoder les caractères réservés, filtrer côté serveur et éviter d'y exposer des secrets. Le fragment (#id) n'est jamais envoyé au serveur.",
+    impact: "Limiter les paramètres réduit le duplicate content et les injections.",
     sources: [
       { label: "RFC 3986 - Query", url: "https://www.rfc-editor.org/rfc/rfc3986#section-3.4" },
       { label: "Google Analytics UTM", url: "https://support.google.com/analytics/answer/10915502" },
     ],
-    visual: <UrlStructureVisual stage="Parametres et fragments" />,
+    visual: <UrlStructureVisual stage="Paramètres et fragments" />,
   },
   {
     title: "Statuts et redirections",
     text: "301/308 pour du permanent, 302/307 pour du temporaire.",
     details:
-      "Une redirection renvoie un code 3xx et un en-tete Location. 301 et 308 preservent le referencement lors d'un demenagement definitif. 302 et 307 servent aux tests ou maintenance. Eviter les chaines superieures a deux sauts.",
+      "Une redirection renvoie un code 3xx et un en-tête Location. 301 et 308 préservent le référencement lors d'un déplacement définitif. 302 et 307 servent aux tests ou à la maintenance. Limiter les chaînes à deux sauts maximum.",
     impact: "Dirige correctement les utilisateurs et conserve le PageRank.",
     sources: [
       { label: "MDN - Redirections", url: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections" },
@@ -117,14 +117,14 @@ const supplement = (
   <div className="space-y-4">
     <header className="space-y-1">
       <p className="text-xs uppercase tracking-[0.35em] text-white/60">Checklist URL</p>
-      <h4 className="text-xl font-semibold text-white">Points a verifier</h4>
+      <h4 className="text-xl font-semibold text-white">Points à vérifier</h4>
     </header>
     <ul className="grid gap-3 md:grid-cols-2 text-sm text-white/80">
       {[
         "Certificat TLS valide et HSTS actif",
-        "URL canonique definie pour eviter le duplicate",
-        "Parametres filtres et limites server-side",
-        "Redirections en chaine limitees a deux sauts",
+        "URL canonique définie pour éviter le duplicate",
+        "Paramètres filtrés et limités côté serveur",
+        "Chaînes de redirection limitées à deux sauts",
       ].map((item) => (
         <li key={item} className="rounded-2xl border border-white/12 bg-white/8 p-4">
           {item}
@@ -138,7 +138,7 @@ const UrlSlide: SlideComponent = ({ index, total }) => (
   <SlideTemplate
     title="URL : anatomie et statut"
     tagline="Lire une URL comme un pro"
-    description="Schema, chemin, parametres et statuts composent une URL robuste et exploitable."
+    description="Schéma, chemin, paramètres et statuts composent une URL robuste et exploitable."
     highlights={highlights}
     index={index}
     total={total}

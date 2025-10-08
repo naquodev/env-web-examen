@@ -19,21 +19,18 @@ type InfoCardProps = {
 };
 
 function HomeVisual({ stage }: InfoCardProps) {
-  const infoMap: Record<string, string> = {
-    "Navigation fluide":
-      "Fleches gauche/droite, clic sur les puces et swipe tactile",
-    "Effet liquid glass":
-      "Fond translucide, halo lumineux, profondeur et blur progressif",
-    "5 modules cles":
-      "Timeline, URL, Domaines, Standards, Securite, recap convivial",
+  const map: Record<string, string> = {
+    "Navigation fluide": "Clavier gauche/droite, clic ou swipe",
+    "Effet liquid glass": "Blur, halo lumineux et profondeur",
+    "5 modules clés": "Timeline, URL, Domaines, Standards, Sécurité",
   };
 
   return (
     <div className="rounded-3xl border border-white/12 bg-white/8 p-4 text-sm text-white/80">
       <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-        Experience
+        Expérience
       </p>
-      <p className="mt-2 text-white/90">{infoMap[stage]}</p>
+      <p className="mt-2 text-white/90">{map[stage]}</p>
     </div>
   );
 }
@@ -41,27 +38,27 @@ function HomeVisual({ stage }: InfoCardProps) {
 const highlights: HomeHighlight[] = [
   {
     title: "Navigation fluide",
-    text: "Utilisez les puces rondes ou les fleches du clavier pour explorer chaque module.",
+    text: "Utilisez les puces rondes ou les flèches du clavier pour explorer chaque module.",
     details:
-      "Le slider gere le clic, le tap et les fleches directionnelles pour des transitions continues. L'animation portal conserve le contexte visuel et renforce l'impression de profondeur.",
+      "Le slider gère à la fois le clic, le tap et les flèches gauche et droite pour faire défiler les sections sans rupture. L'animation portal conserve le contexte visuel et renforce l'impression de profondeur.",
     impact:
-      "Permet une lecture lineaire ou ciblable selon le besoin sans casser le flow.",
+      "Permet une lecture linéaire ou ciblée selon le besoin sans casser le flow.",
   },
   {
     title: "Effet liquid glass",
     text: "Surface translucide, halos et flous dynamiques mettent les contenus en valeur.",
     details:
-      "Les panneaux combinent blur, degrades froids et ombres diffuses pour recreer une ambiance glassmorphism proche de visionOS. Le contraste a ete calibre pour garder la lisibilite du texte.",
+      "Les panneaux combinent blur, dégradés froids et ombres diffuses pour recréer une ambiance glassmorphism proche de visionOS. Le contraste a été calibré pour garder la lisibilité du texte.",
     impact:
-      "Offre une presentation premium qui hierechise le contenu sans nuire a la lecture.",
+      "Offre une présentation premium qui hiérarchise le contenu sans nuire à la lecture.",
   },
   {
-    title: "5 modules cles",
-    text: "Timeline, URL, domaines, standards et securite offrent un panorama complet.",
+    title: "5 modules clés",
+    text: "Timeline, URL, domaines, standards et sécurité offrent un panorama complet.",
     details:
-      "Chaque module condense un savoir essentiel: jalons historiques, anatomie d'une URL, cycle de vie d'un domaine, gouvernance des standards et menaces de securite.",
+      "Chaque module condense un savoir essentiel : jalons historiques, anatomie d'une URL, cycle de vie d'un domaine, gouvernance des standards et menaces de sécurité.",
     impact:
-      "Constitue un kit de revision clair pour reussir l'examen ou preparer une presentation.",
+      "Constitue un kit de révision clair pour réussir l'examen ou préparer une présentation.",
   },
 ];
 
@@ -70,7 +67,7 @@ const modules: ModuleLink[] = [
   { label: "URL", slideId: "url" },
   { label: "Domaines", slideId: "domain" },
   { label: "Standards", slideId: "standards" },
-  { label: "Securite", slideId: "security" },
+  { label: "Sécurité", slideId: "security" },
 ];
 
 const HomeSlide: SlideComponent = ({ index, total }) => {
@@ -91,8 +88,8 @@ const HomeSlide: SlideComponent = ({ index, total }) => {
           Modules
         </p>
         <p className="text-sm text-white/75">
-          Accedez directement au module qui vous interesse en un clic ou avec
-          les fleches.
+          Accédez directement au module qui vous intéresse en un clic ou avec
+          les flèches.
         </p>
       </header>
       <div className="flex flex-wrap gap-3 text-sm text-white/85">
@@ -121,7 +118,7 @@ const HomeSlide: SlideComponent = ({ index, total }) => {
     <SlideTemplate
       title="Home"
       tagline="Bienvenue dans l'exploration du Web"
-      description="Parcourez les piliers du Web moderne dans une ambiance liquid glass inspiree des interfaces Apple."
+      description="Parcourez les piliers du Web moderne dans une ambiance liquid glass inspirée des interfaces Apple."
       highlights={mappedHighlights}
       index={index}
       total={total}

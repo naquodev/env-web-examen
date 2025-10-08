@@ -13,13 +13,13 @@ function StandardsConstellation({ stage }: StandardsVisualProps) {
       badges: ["HTML", "CSS", "DOM", "Fetch"],
     },
     {
-      key: "Interoperabilite",
+      key: "Interopérabilité",
       label: "Web Platform Tests",
       badges: ["Blink", "Gecko", "WebKit", "Edge"],
     },
     {
-      key: "Accessibilite et performance",
-      label: "Accessibilite & Transport",
+      key: "Accessibilité et performance",
+      label: "Accessibilité & Transport",
       badges: ["WCAG", "ARIA", "HTTP/3", "ECMAScript"],
     },
     {
@@ -61,7 +61,7 @@ function StandardsConstellation({ stage }: StandardsVisualProps) {
         })}
       </div>
       <p className="text-xs text-white/70">
-        Les standards evitent la fragmentation: memes APIs, memes attentes, moins de hacks navigateur.
+        Les standards évitent la fragmentation : mêmes APIs, mêmes attentes, moins de hacks navigateurs.
       </p>
     </div>
   );
@@ -70,10 +70,10 @@ function StandardsConstellation({ stage }: StandardsVisualProps) {
 const highlights = [
   {
     title: "W3C et WHATWG",
-    text: "Organismes qui co-definissent HTML, CSS, DOM et Fetch.",
+    text: "Organismes qui co-définissent HTML, CSS, DOM et Fetch.",
     details:
-      "Le W3C publie des recommandations par consensus ouvert. WHATWG maintient un HTML vivant. Depuis 2019, un accord aligne les deux structures pour eviter la divergence.",
-    impact: "Tout navigateur applique la meme reference, ce qui limite les incompatibilites.",
+      "Le W3C publie des recommandations par consensus ouvert. WHATWG maintient un HTML vivant. Depuis 2019, un accord aligne les deux structures pour éviter la divergence.",
+    impact: "Tous les navigateurs appliquent la même référence, ce qui limite les incompatibilités.",
     sources: [
       { label: "W3C - About", url: "https://www.w3.org/Consortium/" },
       { label: "W3C x WHATWG", url: "https://www.w3.org/2019/04/whatwg-cooperation/" },
@@ -81,35 +81,35 @@ const highlights = [
     visual: <StandardsConstellation stage="W3C et WHATWG" />,
   },
   {
-    title: "Interoperabilite",
-    text: "Les Web Platform Tests valident les implementations.",
+    title: "Interopérabilité",
+    text: "Les Web Platform Tests valident les implémentations.",
     details:
-      "Les acteurs du Web contribuent a une suite de tests partages (WPT). Une fonctionnalite n'est consideree stable qu'une fois verifiee sur Blink, Gecko et WebKit.",
-    impact: "Reduit les hacks CSS ou JS specifiques et accelere le debug multi-browsers.",
+      "Les acteurs du Web contribuent à une suite de tests partagés (WPT). Une fonctionnalité n'est considérée stable qu'une fois vérifiée sur Blink, Gecko et WebKit.",
+    impact: "Réduit les hacks CSS ou JS spécifiques et accélère le debug multi-navigateurs.",
     sources: [
       { label: "web-platform-tests", url: "https://web-platform-tests.org/" },
       { label: "W3C - Interop", url: "https://www.w3.org/standards/about/interoperability" },
     ],
-    visual: <StandardsConstellation stage="Interoperabilite" />,
+    visual: <StandardsConstellation stage="Interopérabilité" />,
   },
   {
-    title: "Accessibilite et performance",
-    text: "WCAG, ARIA, ECMAScript et HTTP/3 cadrent experience et vitesse.",
+    title: "Accessibilité et performance",
+    text: "WCAG, ARIA, ECMAScript et HTTP/3 cadrent expérience et vitesse.",
     details:
-      "WCAG et ARIA guident l'accessibilite des interfaces. TC39 fait evoluer ECMAScript chaque annee. L'IETF publie HTTP/2 et HTTP/3 pour optimiser transport et securite.",
-    impact: "Garantit des experiences inclusives et rapides, meme sur reseaux limites.",
+      "WCAG et ARIA guident l'accessibilité des interfaces. TC39 fait évoluer ECMAScript chaque année. L'IETF publie HTTP/2 et HTTP/3 pour optimiser transport et sécurité.",
+    impact: "Garantit des expériences inclusives et rapides, même sur réseaux limités.",
     sources: [
       { label: "W3C - WCAG", url: "https://www.w3.org/TR/WCAG22/" },
       { label: "IETF - HTTP/3", url: "https://www.rfc-editor.org/rfc/rfc9114" },
     ],
-    visual: <StandardsConstellation stage="Accessibilite et performance" />,
+    visual: <StandardsConstellation stage="Accessibilité et performance" />,
   },
   {
     title: "Gouvernance durable",
     text: "Processus ouverts, brevets libres, groupes communautaires.",
     details:
-      "Les specs W3C adoptent la politique Royalty-Free. Les drafts sont publics, les issues discutees dans des groupes ouverts et les implementations pilotent l'evolution via feedback.",
-    impact: "Preserve la confiance entre editeurs, integrateurs et constructeurs.",
+      "Les spécifications W3C adoptent la politique Royalty-Free. Les drafts sont publics, les issues discutées dans des groupes ouverts et les implémentations pilotent l'évolution via feedback.",
+    impact: "Préserve la confiance entre éditeurs, intégrateurs et constructeurs.",
     sources: [
       { label: "W3C Patent Policy", url: "https://www.w3.org/Consortium/Patent-Policy-20200915/" },
       { label: "W3C Process", url: "https://www.w3.org/Consortium/Process/" },
@@ -122,7 +122,7 @@ const supplement = (
   <div className="space-y-4">
     <header className="space-y-1">
       <p className="text-xs uppercase tracking-[0.35em] text-white/60">Empilement</p>
-      <h4 className="text-xl font-semibold text-white">De la couche reseau aux frameworks</h4>
+      <h4 className="text-xl font-semibold text-white">De la couche réseau aux frameworks</h4>
     </header>
     <div className="grid gap-3 md:grid-cols-4 text-sm text-white/80">
       {[
@@ -143,8 +143,8 @@ const supplement = (
 const StandardsSlide: SlideComponent = ({ index, total }) => (
   <SlideTemplate
     title="Standards du Web"
-    tagline="Orchestrer l'interoperabilite"
-    description="Les standards garantissent que les navigateurs et plateformes interpretent le meme code sans chaos."
+    tagline="Orchestrer l'interopérabilité"
+    description="Les standards garantissent que navigateurs et plateformes interprètent le même code sans chaos."
     highlights={highlights}
     index={index}
     total={total}

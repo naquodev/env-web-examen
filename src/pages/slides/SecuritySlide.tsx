@@ -9,10 +9,10 @@ function SecurityBestPracticesVisual() {
   return (
     <div className="grid gap-3 rounded-3xl border border-white/12 bg-white/8 p-4 text-sm text-white/80 md:grid-cols-2">
       {[
-        "Journaliser acces et actions sensibles",
-        "Segmenter reseau (prod/preprod/test)",
-        "Plan de reponse crise et sauvegardes",
-        "Audits reguliers et bug bounty",
+        "Journaliser accès et actions sensibles",
+        "Segmenter réseau (prod/préprod/test)",
+        "Plan de réponse crise et sauvegardes",
+        "Audits réguliers et bug bounty",
       ].map((item) => (
         <div key={item} className="rounded-2xl border border-white/10 bg-white/6 p-3">
           {item}
@@ -32,12 +32,12 @@ function SecurityMatrix({ stage }: SecurityVisualProps) {
     {
       key: "Malware et injections",
       title: "Code",
-      measures: "Validation entrees, CSP, analyse uploads, chaine CI/CD",
+      measures: "Validation entrées, CSP, analyse uploads, chaîne CI/CD",
     },
     {
       key: "Brute force et credentials",
-      title: "Identites",
-      measures: "MFA, Argon2/bcrypt, rate limiting, detection fuite",
+      title: "Identités",
+      measures: "MFA, Argon2/bcrypt, rate limiting, détection fuite",
     },
     {
       key: "Scraping vs abus",
@@ -67,7 +67,7 @@ function SecurityMatrix({ stage }: SecurityVisualProps) {
         })}
       </div>
       <p className="text-xs text-white/70">
-        Equilibrer prevention, detection et reponse reduit la surface d'attaque.
+        Équilibrer prévention, détection et réponse réduit la surface d'attaque.
       </p>
     </div>
   );
@@ -76,10 +76,10 @@ function SecurityMatrix({ stage }: SecurityVisualProps) {
 const highlights = [
   {
     title: "Phishing et engineering social",
-    text: "Emails clones, faux formulaires et SMS malveillants ciblent l'humain.",
+    text: "Emails clonés, faux formulaires et SMS malveillants ciblent l'humain.",
     details:
-      "Authentifier les emails (SPF, DKIM, DMARC), ajouter des banniere d'alerte, generaliser MFA et surveiller les noms proches (typosquat).",
-    impact: "Limite le vol d'identifiants et protege la relation utilisateur.",
+      "Authentifier les emails (SPF, DKIM, DMARC), afficher des bannières d'alerte, généraliser le MFA et surveiller les noms proches (typosquat).",
+    impact: "Limite le vol d'identifiants et protège la relation utilisateur.",
     sources: [
       { label: "CISA - Phishing", url: "https://www.cisa.gov/news-events/newsstopransomware/guidance-phishing" },
       { label: "DMARC.org", url: "https://dmarc.org/overview/" },
@@ -88,10 +88,10 @@ const highlights = [
   },
   {
     title: "Malware et injections",
-    text: "XSS, uploads malveillants et dependances compromises visent vos apps.",
+    text: "XSS, uploads malveillants et dépendances compromises visent vos apps.",
     details:
-      "Valider les entrees, appliquer CSP, limiter/ scanner les fichiers, surveiller la supply chain (revue dependances, signatures, SBOM).",
-    impact: "Evite defacement, fuite de donnees et intrusion via CI/CD.",
+      "Valider les entrées, appliquer CSP, limiter et scanner les fichiers, surveiller la supply chain (revue dépendances, signatures, SBOM).",
+    impact: "Évite defacement, fuite de données et intrusion via CI/CD.",
     sources: [
       { label: "OWASP - XSS prevention", url: "https://owasp.org/www-community/xss-prevention" },
       { label: "GitHub - Supply chain", url: "https://docs.github.com/en/code-security/supply-chain-security" },
@@ -100,10 +100,10 @@ const highlights = [
   },
   {
     title: "Brute force et credentials",
-    text: "Bots testent combos fuit es ou incrementent les mots de passe.",
+    text: "Bots testent des combos fuités ou incrémentent les mots de passe.",
     details:
       "Imposer MFA ou passkeys, hasher avec Argon2/bcrypt, limiter les tentatives, appliquer captchas adaptatifs et surveiller les dumps d'identifiants.",
-    impact: "Protège comptes clients et admins contre les compromissions massives.",
+    impact: "Protège comptes clients et administrateurs contre les compromissions massives.",
     sources: [
       { label: "NIST SP 800-63B", url: "https://pages.nist.gov/800-63-3/sp800-63b.html" },
       { label: "OWASP - Authentication", url: "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html" },
@@ -112,10 +112,10 @@ const highlights = [
   },
   {
     title: "Scraping vs abus",
-    text: "Distinguer robots utiles, extraction legitime et abus massifs.",
+    text: "Distinguer robots utiles, extraction légitime et abus massifs.",
     details:
-      "Respecter robots.txt pour les crawlers legitimes, appliquer rate limiting, reputations user-agent, captchas progressifs et canaux legaux pour partenaires data.",
-    impact: "Preserve disponibilite et valeur sans bloquer le SEO.",
+      "Respecter robots.txt pour les crawlers légitimes, appliquer rate limiting, reputations user-agent, captchas progressifs et canaux légaux pour partenaires data.",
+    impact: "Préserve disponibilité et valeur sans bloquer le SEO.",
     sources: [
       { label: "Cloudflare - Bot management", url: "https://www.cloudflare.com/learning/bots/what-is-bot-management/" },
       { label: "Google - Control crawling", url: "https://developers.google.com/search/docs/crawling-indexing/robots/intro" },
@@ -124,10 +124,10 @@ const highlights = [
   },
   {
     title: "Bonnes pratiques",
-    text: "Journalisation, segmentation et plan de reponse assurent la resilience.",
+    text: "Journalisation, segmentation et plan de réponse assurent la résilience.",
     details:
-      "Activer logs et alertes sur acces critiques, isoler reseaux (prod, preprod, dev), maintenir plans de crise et sauvegardes teste es, organiser audits et bug bounty.",
-    impact: "Reduit le temps de reaction et limite l'impact financier et reputatif.",
+      "Activer logs et alertes sur accès critiques, isoler les réseaux (prod, préprod, dev), maintenir plans de crise et sauvegardes testées, organiser audits et bug bounty.",
+    impact: "Réduit le temps de réaction et limite l'impact financier et réputationnel.",
     sources: [
       { label: "ANSSI - Guide SSI", url: "https://www.ssi.gouv.fr/" },
     ],
@@ -139,17 +139,17 @@ const supplement = (
   <div className="space-y-4">
     <header className="space-y-1">
       <p className="text-xs uppercase tracking-[0.35em] text-white/60">Plan d'action</p>
-      <h4 className="text-xl font-semibold text-white">Defense par couches</h4>
+      <h4 className="text-xl font-semibold text-white">Défense par couches</h4>
     </header>
     <ol className="grid gap-3 md:grid-cols-4 text-sm text-white/80">
       {[
-        "Visibilite: inventaire assets, telemetry, journaux",
-        "Prevention: MFA, revue de code, gestion secrets",
-        "Detection: SIEM, honeypots, alertes comportement",
-        "Reponse: runbooks, bastion admin, exercices crise",
+        "Visibilité : inventaire assets, télémétrie, journaux",
+        "Prévention : MFA, revue de code, gestion secrets",
+        "Détection : SIEM, honeypots, alertes comportement",
+        "Réponse : runbooks, bastion admin, exercices crise",
       ].map((item, index) => (
         <li key={item} className="rounded-3xl border border-white/12 bg-white/8 p-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-white/55">Etape {index + 1}</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-white/55">Étape {index + 1}</p>
           <p className="mt-2 text-white">{item}</p>
         </li>
       ))}
@@ -159,9 +159,9 @@ const supplement = (
 
 const SecuritySlide: SlideComponent = ({ index, total }) => (
   <SlideTemplate
-    title="Securite du Web"
+    title="Sécurité du Web"
     tagline="Anticiper les menaces courantes"
-    description="Reperer les attaques classiques et mettre en place des garde-fous pour proteger utilisateurs et donnees."
+    description="Repérer les attaques classiques et mettre en place des garde-fous pour protéger utilisateurs et données."
     highlights={highlights}
     index={index}
     total={total}
@@ -170,7 +170,7 @@ const SecuritySlide: SlideComponent = ({ index, total }) => (
 );
 
 SecuritySlide.slideId = "security";
-SecuritySlide.bulletLabel = "Securite";
+SecuritySlide.bulletLabel = "Sécurité";
 SecuritySlide.glow = "from-emerald-500/45 via-teal-500/20 to-cyan-500/40";
 SecuritySlide.glowAlt = "from-teal-500/25 via-emerald-400/15 to-blue-500/30";
 
